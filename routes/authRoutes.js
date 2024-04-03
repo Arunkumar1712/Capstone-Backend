@@ -10,7 +10,7 @@ router.use(cookieParser())
 router.use(express.urlencoded({extended: false}))
 router.use(
     cors({
-        origin: 'https://660d491c128a30df592c5a64--genuine-crostata-3ec8e9.netlify.app',
+        origin: 'https://660d7f138d457f082aba3792--genuine-crostata-3ec8e9.netlify.app/',
         credentials: true, 
     })
 )
