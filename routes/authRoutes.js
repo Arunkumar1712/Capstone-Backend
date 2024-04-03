@@ -6,8 +6,8 @@ const {test,registerUser,loginUser,getProfile,logoutUser,homepagedata,teamData,w
 // middleware
 router.use(
     cors({
-        credentials: true,
-        origin:"https://660d491c128a30df592c5a64--genuine-crostata-3ec8e9.netlify.app"
+       
+        origin:"https://660d491c128a30df592c5a64--genuine-crostata-3ec8e9.netlify.app", credentials: true
     })
 )
 router.get('/',test)
