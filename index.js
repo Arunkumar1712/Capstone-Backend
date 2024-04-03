@@ -13,7 +13,12 @@ const app = express();
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({extended: false}))
-
+///
+const corsOptions = {
+    origin: 'https://genuine-crostata-3ec8e9.netlify.app/',
+  };
+  
+  app.use(cors(corsOptions));
 
 app.use('/',require('./routes/authRoutes'))
 const port =4000;
