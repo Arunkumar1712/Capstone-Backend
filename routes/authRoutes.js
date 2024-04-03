@@ -2,17 +2,18 @@ const express= require('express');
 const router = express.Router();
 const cors = require('cors');
 const {mongoose} = require('mongoose')
+const cookieParser = require('cookie-parser')
 const {test,registerUser,loginUser,getProfile,logoutUser,homepagedata,teamData,weather1,eventdata} = require('../controllers/authController')
 // middleware
+router.use(express.json())
+router.use(cookieParser())
+router.use(express.urlencoded({extended: false}))
 router.use(
-    express.json(),
-    express.urlencoded({ extended: false }),
-    require('cookie-parser')(),
-    require('cors')({
-        origin: "https://660d491c128a30df592c5a64--genuine-crostata-3ec8e9.netlify.app",
-        credentials: true
+    cors({
+        origin: 'https://660d491c128a30df592c5a64--genuine-crostata-3ec8e9.netlify.app',
+        credentials: true, 
     })
-);
+)
 router.get('/',test)
 router.post('/signup', registerUser)
 router.post('/login', loginUser)
