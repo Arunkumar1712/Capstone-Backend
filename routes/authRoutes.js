@@ -7,7 +7,7 @@ const {test,registerUser,loginUser,getProfile,logoutUser,homepagedata,teamData,w
 router.use(
     cors({
         credentials: true,
-        origin:"http://localhost:3000"
+         origin: '*'
     })
 )
 router.get('/',test)
