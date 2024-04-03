@@ -17,8 +17,8 @@ app.use(express.urlencoded({extended: false}))
 
 const corsOptions = {
     origin: 'https://660d491c128a30df592c5a64--genuine-crostata-3ec8e9.netlify.app',
-    credentials: true,
-};
+    credentials: true, // Allow credentials (cookies)
+  };
   
   
   app.use(cors(corsOptions));
