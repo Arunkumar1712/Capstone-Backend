@@ -71,31 +71,18 @@ const loginUser =async (req,res)=>{
 
 }
 //end point for profile
-const getProfile = async (req, res) => {
-  try {
-      const { token } = req.cookies;
-      if (token) {
-          jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
-              if (err) {
-                  // Token verification failed
-                  console.error('Error verifying token:', err);
-                  res.status(401).json({ error: 'Unauthorized' });
-              } else {
-                  // Token verification successful, send user data
-                  res.json(user);
-              }
-          });
-      } else {
-          // No token found in cookies
-          res.status(401).json({ error: 'Unauthorized' });
-      }
-  } catch (error) {
-      // Internal server error
-      console.error('An error occurred:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-  }
-};
-
+const getProfile = async(req,res) =>{
+ const  {token} = req.cookies
+ if(token){
+    jwt.verify(token,process.env.JWT_SECRET,{}, (err,user)=>{
+        if(err) throw err;
+        res.json(user)
+    })
+ }
+ else{
+    res.json(null)
+ }
+}
 // logout end point
 const logoutUser = async (req, res) => {
     try {
