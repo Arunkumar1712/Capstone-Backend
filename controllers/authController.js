@@ -208,12 +208,10 @@ const eventdata = async(req,res)=>{
 }
 const businessmeeting= async(req,res)=>{
   try {
-    // Fetch data from the 'homepageproducts' collection
-    const eventsDataCollection = mongoose.connection.collection('businessmeeting');
-
-    // Fetch data from the 'homepageproducts' collection
-    const eventDataperson = await eventsDataCollection.find({}).toArray();
-    res.json(eventDataperson);
+    
+    const buisnessrecom = mongoose.connection.collection('businessmeeting');
+    const buisnessrecomendation = await buisnessrecom.find({}).toArray();
+    res.json(buisnessrecomendation);
 } catch (error) {
     // Handle errors
     console.error('Error fetching teamData', error);
