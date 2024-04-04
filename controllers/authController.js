@@ -218,7 +218,29 @@ const businessmeeting= async(req,res)=>{
     res.status(500).json({ error: 'Internal server error' });
 }
 }
-  
+const summarparty=async(req,res)=>{
+  try {
+    const summardata = mongoose.connection.collection('summarparty');
+    const datasummer = await summardata.find({}).toArray();
+    res.json(datasummer);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const wedding= async (req,res)=>{
+  try {
+    const weddingdata = mongoose.connection.collection('summarparty');
+    const datawedding = await weddingdata.find({}).toArray();
+    res.json(datawedding);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}  
+
 module.exports={
     test,
     registerUser,
@@ -229,5 +251,7 @@ module.exports={
     teamData,
     weather1,
     eventdata,
-    businessmeeting
+    businessmeeting,
+    summarparty,
+    wedding
 }
