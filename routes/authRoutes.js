@@ -3,7 +3,7 @@ const router = express.Router();
 const cors = require('cors');
 const {mongoose} = require('mongoose')
 const cookieParser = require('cookie-parser')
-const {test,registerUser,loginUser,getProfile,logoutUser,homepagedata,teamData,weather1,eventdata} = require('../controllers/authController')
+const {test,registerUser,loginUser,getProfile,logoutUser,homepagedata,teamData,weather1,eventdata,businessmeeting} = require('../controllers/authController')
 // middleware
 router.use(express.json())
 router.use(cookieParser())
@@ -31,5 +31,6 @@ router.get('/homepagedata', homepagedata);
 router.get('/teamData',teamData)
 router.get('/weather', weather1);
 router.get('/eventsdata',eventdata)
+router.get('recomendations/:Business-Meeting',businessmeeting)
 
 module.exports = router

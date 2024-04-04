@@ -59,13 +59,13 @@ const loginUser =async (req,res)=>{
         if(match){
        jwt.sign({email: user.email, id: user._id,name:user.name},process.env.JWT_SECRET,{},(err,token)=>{
         if(err) throw err;
-        res.cookie('token',token).json(user)
-        localStorage.setItem("token",req.cookies);//we can remove any time
-       } )
-        }
-        if(!match){
-            res.json({error:'password not match'})
-           }
+        res.cookie('token', token);
+        // Send the user data along with the token
+        res.json({ user, token });
+    });
+} else {
+    res.json({ error: 'Password does not match' });
+}
     } catch (error) {
         console.log(error)
     }
@@ -206,6 +206,20 @@ const eventdata = async(req,res)=>{
     res.status(500).json({ error: 'Internal server error' });
 }
 }
+const businessmeeting= async(req,res)=>{
+  try {
+    // Fetch data from the 'homepageproducts' collection
+    const eventsDataCollection = mongoose.connection.collection('businessmeeting');
+
+    // Fetch data from the 'homepageproducts' collection
+    const eventDataperson = await eventsDataCollection.find({}).toArray();
+    res.json(eventDataperson);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
   
 module.exports={
     test,
@@ -216,5 +230,6 @@ module.exports={
     homepagedata,
     teamData,
     weather1,
-    eventdata
+    eventdata,
+    businessmeeting
 }
