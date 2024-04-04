@@ -74,15 +74,19 @@ const loginUser =async (req,res)=>{
 //end point for profile
 const getProfile = async(req,res) =>{
  const  {token} = req.cookies
- if(token){
-    jwt.verify(token,process.env.JWT_SECRET,{}, (err,user)=>{
-        if(err) throw err;
-        res.json(user)
-    })
- }
- else{
-    res.json(null)
- }
+ console.log('Token:', token);
+ if (token) {
+  jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+      if (err) {
+          console.error('Error verifying JWT token:', err);
+          return res.json(null);
+      }
+      console.log('Decoded User:', user); // Log the decoded user information
+      res.json(user);
+  });
+} else {
+  res.json(null);
+}
 }
 // logout end point
 const logoutUser = async (req, res) => {
