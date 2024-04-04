@@ -19,7 +19,10 @@ app.use(express.urlencoded({extended: false}))
 //     origin: 'https://660d7f138d457f082aba3792--genuine-crostata-3ec8e9.netlify.app/',
 //     credentials: true, 
 //   };
-  
+ // const corsOptions = {
+//     origin: 'https://660d7f138d457f082aba3792--genuine-crostata-3ec8e9.netlify.app/',
+//     credentials: true, 
+//   }; 
   
 //   app.use(cors(corsOptions));
 
