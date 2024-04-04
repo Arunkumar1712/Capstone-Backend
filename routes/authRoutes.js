@@ -31,6 +31,6 @@ router.get('/homepagedata', homepagedata);
 router.get('/teamData',teamData)
 router.get('/weather', weather1);
 router.get('/eventsdata',eventdata)
-router.get('recomendations/:Business-Meeting',businessmeeting)
+router.get('/recomendations/:Business-Meeting',businessmeeting)
 
 module.exports = router
