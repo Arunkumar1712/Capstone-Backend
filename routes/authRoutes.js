@@ -9,7 +9,7 @@ router.use(express.json())
 router.use(cookieParser())
 router.use(express.urlencoded({extended: false}))
 const corsOptions = {
-    origin: ['https://genuine-crostata-3ec8e9.netlify.app', 'http://localhost:3000'], // Update with your Netlify origin
+    origin: ['https://660ecc4e96df2719848f6a79--genuine-crostata-3ec8e9.netlify.app', 'http://localhost:3000'], // Update with your Netlify origin
     credentials: true,
   };
   
