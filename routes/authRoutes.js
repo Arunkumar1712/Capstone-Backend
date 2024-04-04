@@ -8,12 +8,19 @@ const {test,registerUser,loginUser,getProfile,logoutUser,homepagedata,teamData,w
 router.use(express.json())
 router.use(cookieParser())
 router.use(express.urlencoded({extended: false}))
-router.use(
-    cors({
-        origin: 'https://660d7f138d457f082aba3792--genuine-crostata-3ec8e9.netlify.app/',
-        credentials: true, 
-    })
-)
+const corsOptions = {
+    origin: 'https://genuine-crostata-3ec8e9.netlify.app', // Update with your Netlify origin
+    credentials: true,
+  };
+  
+  // Enable CORS with the specified options
+  router.use(cors(corsOptions));
+// router.use(
+//     cors({
+//         origin: 'https://660d7f138d457f082aba3792--genuine-crostata-3ec8e9.netlify.app/',
+//         credentials: true, 
+//     })
+// )
 router.get('/',test)
 router.post('/signup', registerUser)
 router.post('/login', loginUser)
