@@ -252,7 +252,7 @@ const brunch= async(req,res)=>{
 //     res.status(500).json({ error: 'Internal server error' });
 // }
 try {
-  const summardata = mongoose.connection.collection('BrunchFriends');
+  const summardata = mongoose.connection.collection('brunchwith');
   const datasummer = await summardata.find({}).toArray();
   res.json(datasummer);
 } catch (error) {
