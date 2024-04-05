@@ -243,7 +243,7 @@ const wedding= async (req,res)=>{
 
 const cocktail = async (req, res) => {
   try {
-    const mongoURI = process.env.Mongo1_url; // Assuming you have the MongoDB connection URL stored in an environment variable
+    const mongoURI = process.env.MONGO_URL; // Assuming you have the MongoDB connection URL stored in an environment variable
 
     // Connect to MongoDB using the connection URL
     const client = await MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
