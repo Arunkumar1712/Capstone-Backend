@@ -265,9 +265,10 @@ const cocktail = async (req, res) => {
 
 const office=async(req,res)=>{
   try {
-    const officedata = mongoose.connection.collection('officeattire');
-    const dataoffice = await officedata.find({}).toArray();
-    res.json(dataoffice);
+    
+    const buisnessrecom = mongoose.connection.collection('businessmeeting');
+    const buisnessrecomendation = await buisnessrecom.find({}).toArray();
+    res.json(buisnessrecomendation);
 } catch (error) {
     // Handle errors
     console.error('Error fetching teamData', error);
