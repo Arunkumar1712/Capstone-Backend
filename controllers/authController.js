@@ -231,7 +231,7 @@ const summarparty=async(req,res)=>{
 }
 const wedding= async (req,res)=>{
   try {
-    const weddingdata = mongoose.connection.collection('summarparty');
+    const weddingdata = mongoose.connection.collection('weddinddata');
     const datawedding = await weddingdata.find({}).toArray();
     res.json(datawedding);
 } catch (error) {
@@ -240,11 +240,89 @@ const wedding= async (req,res)=>{
     res.status(500).json({ error: 'Internal server error' });
 }
 }  
+
+const brunch= async(req,res)=>{
+  try {
+    const brunchdata = mongoose.connection.collection('BrunchFriends');
+    const databrunch = await brunchdata.find({}).toArray();
+    res.json(databrunch);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const cocktail= async(req,res)=>{
+  try {
+    const cocktaildata = mongoose.connection.collection('cocktail');
+    const datacocktail = await cocktaildata.find({}).toArray();
+    res.json(datacocktail);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const office=async(req,res)=>{
+  try {
+    const officedata = mongoose.connection.collection('officeattire');
+    const dataoffice = await officedata.find({}).toArray();
+    res.json(dataoffice);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const airport= async(req,res)=>{
+  try {
+    const airportdata = mongoose.connection.collection('airportoutfit');
+    const dataairport = await airportdata.find({}).toArray();
+    res.json(dataairport);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const yoga= async(req,res)=>{
+  try {
+    const yogadata = mongoose.connection.collection('YogaPilates');
+    const datayoga = await yogadata.find({}).toArray();
+    res.json(datayoga);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const music= async(req,res)=>{
+  try {
+    const musicdata = mongoose.connection.collection('MusicConcert');
+    const datamusic= await musicdata.find({}).toArray();
+    res.json(datamusic);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const fall= async(req,res)=>{
+  try {
+    const falldata = mongoose.connection.collection('FallFestival');
+    const datafall= await falldata.find({}).toArray();
+    res.json(datafall);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
 const summer=async(req,res)=>{
   try {
     const summerdata = mongoose.connection.collection('summer');
-    const datawedding = await summerdata.find({}).toArray();
-    res.json(datawedding);
+    const datasummer = await summerdata.find({}).toArray();
+    res.json(datasummer);
 } catch (error) {
     // Handle errors
     console.error('Error fetching teamData', error);
@@ -252,7 +330,39 @@ const summer=async(req,res)=>{
 }
 
 }
-
+const winter= async(req,res)=>{
+  try {
+    const winterdata = mongoose.connection.collection('winter');
+    const datawinter = await winterdata.find({}).toArray();
+    res.json(datawinter);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const spring= async(req,res)=>{
+  try {
+    const springdata = mongoose.connection.collection('spring');
+    const dataspring = await springdata.find({}).toArray();
+    res.json(dataspring);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
+const autumn= async(req,res)=>{
+  try {
+    const autumndata = mongoose.connection.collection('autumn');
+    const dataautumn = await autumndata.find({}).toArray();
+    res.json(dataautumn);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+}
 module.exports={
     test,
     registerUser,
@@ -266,5 +376,15 @@ module.exports={
     businessmeeting,
     summarparty,
     wedding,
-    summer
+    summer,
+    brunch,
+    cocktail,
+    office,
+    airport,
+    yoga,
+    music,
+    fall,
+    winter,
+    spring,
+    autumn
 }
