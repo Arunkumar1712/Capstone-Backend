@@ -10,7 +10,7 @@ router.use(express.json())
 router.use(cookieParser())
 router.use(express.urlencoded({extended: false}))
 const corsOptions = {
-    origin: ['https://outfit-oracle.netlify.app/', 'http://localhost:3000'], // Update with your Netlify origin
+    origin: ['https://outfit-oracle.netlify.app', 'http://localhost:3000'], // Update with your Netlify origin
     credentials: true,
   };
   
