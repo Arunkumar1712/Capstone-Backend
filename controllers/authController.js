@@ -240,6 +240,18 @@ const wedding= async (req,res)=>{
     res.status(500).json({ error: 'Internal server error' });
 }
 }  
+const summer=async(req,res)=>{
+  try {
+    const summerdata = mongoose.connection.collection('summer');
+    const datawedding = await summerdata.find({}).toArray();
+    res.json(datawedding);
+} catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+}
+
+}
 
 module.exports={
     test,
@@ -253,5 +265,6 @@ module.exports={
     eventdata,
     businessmeeting,
     summarparty,
-    wedding
+    wedding,
+    summer
 }

@@ -4,7 +4,7 @@ const cors = require('cors');
 const {mongoose} = require('mongoose')
 const cookieParser = require('cookie-parser')
 const {test,registerUser,loginUser,getProfile,logoutUser,homepagedata,teamData,weather1,eventdata,
-  businessmeeting,summarparty,wedding} = require('../controllers/authController')
+  businessmeeting,summarparty,wedding,summer} = require('../controllers/authController')
 // middleware
 router.use(express.json())
 router.use(cookieParser())
@@ -35,4 +35,5 @@ router.get('/eventsdata',eventdata)
 router.get('/recomendations/:Business-Meeting',businessmeeting)
 router.get('/recomendations/:Summer-Party',summarparty)
 router.get('/recomendations/:Wedding',wedding)
+router.get('/summer',summer)
 module.exports = router
