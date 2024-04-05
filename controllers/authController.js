@@ -241,17 +241,28 @@ const wedding= async (req,res)=>{
 }
 }  
 
-const cocktail= async(req,res)=>{
+const cocktail = async (req, res) => {
   try {
-    const cocktaildata = mongoose.connection.collection('cocktail');
+    const mongoURI = process.env.Mongo1_url; // Assuming you have the MongoDB connection URL stored in an environment variable
+
+    // Connect to MongoDB using the connection URL
+    const client = await MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+    const db = client.db(); // Get the database instance
+
+    // Access the 'cocktail' collection and retrieve data
+    const cocktaildata = db.collection('cocktail');
     const datacocktail = await cocktaildata.find({}).toArray();
+    
+    // Close the MongoDB connection
+    await client.close();
+
     res.json(datacocktail);
-} catch (error) {
-    // Handle errors
-    console.error('Error fetching teamData', error);
+  } catch (error) {
+    console.error('Error fetching cocktail data:', error);
     res.status(500).json({ error: 'Internal server error' });
-}
-}
+  }
+};
+
 const office=async(req,res)=>{
   try {
     const officedata = mongoose.connection.collection('officeattire');
@@ -274,17 +285,17 @@ const airport= async(req,res)=>{
     res.status(500).json({ error: 'Internal server error' });
 }
 }
-const yoga= async(req,res)=>{
+const yoga = async (req, res) => {
   try {
     const yogadata = mongoose.connection.collection('YogaPilates');
     const datayoga = await yogadata.find({}).toArray();
     res.json(datayoga);
-} catch (error) {
-    // Handle errors
-    console.error('Error fetching teamData', error);
+  } catch (error) {
+    console.error('Error fetching YogaPilates data:', error);
     res.status(500).json({ error: 'Internal server error' });
-}
-}
+  }
+};
+
 const music= async(req,res)=>{
   try {
     const musicdata = mongoose.connection.collection('MusicConcert');
@@ -354,15 +365,7 @@ const autumn= async(req,res)=>{
 }
 
 const brunch= async(req,res)=>{
-  //   try {
-  //     const brunchdata = mongoose.connection.collection('BrunchFriends');
-  //     const databrunch = await brunchdata.find({}).toArray();
-  //     res.json(databrunch);
-  // } catch (error) {
-  //     // Handle errors
-  //     console.error('Error fetching teamData', error);
-  //     res.status(500).json({ error: 'Internal server error' });
-  // }
+ 
   try {
     const summardata = mongoose.connection.collection('autumn');
     const datasummer = await summardata.find({}).toArray();
