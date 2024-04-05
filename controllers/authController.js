@@ -310,7 +310,7 @@ const music= async(req,res)=>{
 }
 const fall= async(req,res)=>{
   try {
-    const falldata = mongoose.connection.collection('FallFestival');
+    const falldata = mongoose.connection.collection('fallfest');
     const datafall= await falldata.find({}).toArray();
     res.json(datafall);
 } catch (error) {
