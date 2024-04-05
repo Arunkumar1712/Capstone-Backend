@@ -231,7 +231,7 @@ const summarparty=async(req,res)=>{
 }
 const wedding= async (req,res)=>{
   try {
-    const weddingdata = mongoose.connection.collection('weddinddata');
+    const weddingdata = mongoose.connection.collection('weddingdata');
     const datawedding = await weddingdata.find({}).toArray();
     res.json(datawedding);
 } catch (error) {
