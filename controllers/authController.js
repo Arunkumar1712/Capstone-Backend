@@ -241,26 +241,6 @@ const wedding= async (req,res)=>{
 }
 }  
 
-const brunch= async(req,res)=>{
-//   try {
-//     const brunchdata = mongoose.connection.collection('BrunchFriends');
-//     const databrunch = await brunchdata.find({}).toArray();
-//     res.json(databrunch);
-// } catch (error) {
-//     // Handle errors
-//     console.error('Error fetching teamData', error);
-//     res.status(500).json({ error: 'Internal server error' });
-// }
-try {
-  const summardata = mongoose.connection.collection('brunchwith');
-  const datasummer = await summardata.find({}).toArray();
-  res.json(datasummer);
-} catch (error) {
-  // Handle errors
-  console.error('Error fetching teamData', error);
-  res.status(500).json({ error: 'Internal server error' });
-}
-}
 const cocktail= async(req,res)=>{
   try {
     const cocktaildata = mongoose.connection.collection('cocktail');
@@ -372,6 +352,27 @@ const autumn= async(req,res)=>{
     res.status(500).json({ error: 'Internal server error' });
 }
 }
+
+const brunch= async(req,res)=>{
+  //   try {
+  //     const brunchdata = mongoose.connection.collection('BrunchFriends');
+  //     const databrunch = await brunchdata.find({}).toArray();
+  //     res.json(databrunch);
+  // } catch (error) {
+  //     // Handle errors
+  //     console.error('Error fetching teamData', error);
+  //     res.status(500).json({ error: 'Internal server error' });
+  // }
+  try {
+    const summardata = mongoose.connection.collection('autumn');
+    const datasummer = await summardata.find({}).toArray();
+    res.json(datasummer);
+  } catch (error) {
+    // Handle errors
+    console.error('Error fetching teamData', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+  }
 module.exports={
     test,
     registerUser,
