@@ -391,6 +391,54 @@ const brunch= async(req,res)=>{
         res.status(500).json({ error: 'Internal server error' });
       }
       }
+const red= async(req,res)=>{
+ 
+        try {
+          const reddata = mongoose.connection.collection('reddress');
+          const datared = await reddata.find({}).toArray();
+          res.json(datared);
+        } catch (error) {
+          // Handle errors
+          console.error('Error fetching teamData', error);
+          res.status(500).json({ error: 'Internal server error' });
+        }
+        }
+        const yellow= async(req,res)=>{
+ 
+          try {
+            const yellowdata = mongoose.connection.collection('yellowdata');
+            const datayellow = await yellowdata.find({}).toArray();
+            res.json(datayellow);
+          } catch (error) {
+            // Handle errors
+            console.error('Error fetching teamData', error);
+            res.status(500).json({ error: 'Internal server error' });
+          }
+          }
+          const purple= async(req,res)=>{
+ 
+            try {
+              const purpledata = mongoose.connection.collection('purpledata');
+              const datapurple = await purpledata.find({}).toArray();
+              res.json(datapurple);
+            } catch (error) {
+              // Handle errors
+              console.error('Error fetching teamData', error);
+              res.status(500).json({ error: 'Internal server error' });
+            }
+            }
+            const orange= async(req,res)=>{
+ 
+              try {
+                const orangeedata = mongoose.connection.collection('Orangedata');
+                const dataorange = await orangeedata.find({}).toArray();
+                res.json(dataorange);
+              } catch (error) {
+                // Handle errors
+                console.error('Error fetching teamData', error);
+                res.status(500).json({ error: 'Internal server error' });
+              }
+              }
 module.exports={
     test,
     registerUser,
@@ -416,5 +464,9 @@ module.exports={
     spring,
     autumn,
     blue,
-    green
+    green,
+    red,
+    yellow,
+    purple,
+    orange
 }
