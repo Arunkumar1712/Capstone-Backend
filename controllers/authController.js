@@ -243,19 +243,9 @@ const wedding= async (req,res)=>{
 
 const cocktail = async (req, res) => {
   try {
-    const mongoURI = process.env.MONGO_URL; // Assuming you have the MongoDB connection URL stored in an environment variable
-
-    // Connect to MongoDB using the connection URL
-    const client = await MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
-    const db = client.db(); // Get the database instance
-
-    // Access the 'cocktail' collection and retrieve data
-    const cocktaildata = db.collection('cocktail');
+// Access the 'cocktail' collection and retrieve data
+    const cocktaildata = mongoose.connection.collection('cocktail');
     const datacocktail = await cocktaildata.find({}).toArray();
-    
-    // Close the MongoDB connection
-    await client.close();
-
     res.json(datacocktail);
   } catch (error) {
     console.error('Error fetching cocktail data:', error);
