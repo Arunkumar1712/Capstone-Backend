@@ -33,16 +33,16 @@ router.get('/homepagedata', homepagedata);
 router.get('/teamData',teamData)
 router.get('/weather', weather1);
 router.get('/eventsdata',eventdata)
-router.get('/recomendations/:Business-Meeting',businessmeeting)
-router.get('/recomendations/:Summer-Party',summarparty)
-router.get('/recomendations/:occasion',wedding)
-router.get('/recomendations/Brunch_with_Friends',brunch)
+router.get('/recomendations/:occasion', businessmeeting);
+router.get('/recomendations/:occasion', summarparty);
+router.get('/recomendations/:occasion', wedding);
+router.get('/recomendations/Brunch_with_Friends', brunch);
 router.get('/recomendations/:occasion', cocktail);
 router.get('/recomendations/:occasion', office);
 router.get('/recomendations/:occasion', airport);
 router.get('/recomendations/:occasion', yoga);
 router.get('/recomendations/:occasion', music);
-router.get('/recomendations/:Fall-Festival',fall)
+router.get('/recomendations/:occasion', fall);
 router.get('/summer',summer)
 router.get('/winter',winter)
 router.get('/spring',spring)
