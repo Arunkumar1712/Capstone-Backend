@@ -35,7 +35,7 @@ router.get('/weather', weather1);
 router.get('/eventsdata',eventdata)
 router.get('/recomendations/:Business-Meeting',businessmeeting)
 router.get('/recomendations/:Summer-Party',summarparty)
-router.get('/recomendations/:Wedding',wedding)
+router.get('/recomendations/:occasion',wedding)
 router.get('/recomendations/Brunch_with_Friends',brunch)
 router.get('/recomendations/:occasion', cocktail);
 router.get('/recomendations/:occasion', office);
