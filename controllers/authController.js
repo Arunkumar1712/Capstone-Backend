@@ -266,7 +266,7 @@ const cocktail = async (req, res) => {
 const office=async(req,res)=>{
   try {
     
-    const buisnessrecom = mongoose.connection.collection('businessmeeting');
+    const buisnessrecom = mongoose.connection.collection('officeattire');
     const buisnessrecomendation = await buisnessrecom.find({}).toArray();
     res.json(buisnessrecomendation);
 } catch (error) {
@@ -310,7 +310,7 @@ const music= async(req,res)=>{
 }
 const fall= async(req,res)=>{
   try {
-    const falldata = mongoose.connection.collection('fallfest');
+    const falldata = mongoose.connection.collection('FallFestival');
     const datafall= await falldata.find({}).toArray();
     res.json(datafall);
 } catch (error) {
