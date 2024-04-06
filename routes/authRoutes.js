@@ -5,7 +5,7 @@ const {mongoose} = require('mongoose')
 const cookieParser = require('cookie-parser')
 const {test,registerUser,loginUser,getProfile,logoutUser,homepagedata,teamData,weather1,eventdata,
   businessmeeting,summarparty,wedding,summer,brunch,cocktail,office,airport,yoga,music,
-  fall,winter,spring,autumn,blue} = require('../controllers/authController')
+  fall,winter,spring,autumn,blue,green} = require('../controllers/authController')
 // middleware
 router.use(express.json())
 router.use(cookieParser())
@@ -44,6 +44,7 @@ router.get('/recomendations/Yoga_and_Pilates',yoga)
 router.get('/recomendations/Music-Concert',music)
 router.get('/recomendations/Fall-Festival',fall)
 router.get('/recomendations/Blue-Outfit-Inspiration',blue)
+router.get('/recomendations/Green-Outfit-Inspiration',green)
 router.get('/summer',summer)
 router.get('/winter',winter)
 router.get('/spring',spring)

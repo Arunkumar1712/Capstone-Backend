@@ -379,6 +379,18 @@ const brunch= async(req,res)=>{
       res.status(500).json({ error: 'Internal server error' });
     }
     }
+    const green= async(req,res)=>{
+ 
+      try {
+        const greendata = mongoose.connection.collection('greendata');
+        const datagreen = await greendata.find({}).toArray();
+        res.json(datagreen);
+      } catch (error) {
+        // Handle errors
+        console.error('Error fetching teamData', error);
+        res.status(500).json({ error: 'Internal server error' });
+      }
+      }
 module.exports={
     test,
     registerUser,
@@ -403,5 +415,6 @@ module.exports={
     winter,
     spring,
     autumn,
-    blue
+    blue,
+    green
 }
