@@ -37,11 +37,11 @@ router.get('/recomendations/:Business-Meeting',businessmeeting)
 router.get('/recomendations/:Summer-Party',summarparty)
 router.get('/recomendations/:Wedding',wedding)
 router.get('/recomendations/Brunch_with_Friends',brunch)
-router.get('/recomendations/:Cocktail-Party',cocktail)
-router.get('/recomendations/:Office-Attire',office)
-router.get('/recomendations/:Airport-Outfits',airport)
-router.get('/recomendations/:Yoga_and_Pilates',yoga)
-router.get('/recomendations/:Music-Concert',music)
+router.get('/recomendations/:occasion', cocktail);
+router.get('/recomendations/:occasion', office);
+router.get('/recomendations/:occasion', airport);
+router.get('/recomendations/:occasion', yoga);
+router.get('/recomendations/:occasion', music);
 router.get('/recomendations/:Fall-Festival',fall)
 router.get('/summer',summer)
 router.get('/winter',winter)
